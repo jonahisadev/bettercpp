@@ -33,6 +33,8 @@ public:
     static String from_std_string(const std::string& std_str);
 };
 
+#ifdef BETTER_CPP_IMPL
+
 String::String()
     : _data(nullptr), _len(0)
 {}
@@ -136,3 +138,5 @@ String String::from_std_string(const std::string& std_str)
 {
     return String(std_str.c_str());
 }
+
+#endif
